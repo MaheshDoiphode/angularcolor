@@ -1,0 +1,68 @@
+.settings-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+.color-box {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    /* Adjusted size */
+}
+
+.number-box {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    /* Adjusted size */
+    height: 50px;
+    /* Adjusted size */
+    margin: 0.5rem;
+    font-weight: bold;
+}
+
+.green {
+    background-color: #4CAF50;
+}
+
+.red {
+    background-color: #F44336;
+}
+
+.violet {
+    background-color: #9C27B0;
+}
+
+.half-red-half-violet {
+    background: linear-gradient(to right, #F44336 50%, #9C27B0 50%);
+}
+
+.half-green-half-violet {
+    background: linear-gradient(to right, #4CAF50 50%, #9C27B0 50%);
+}
+
+/* Custom card styling */
+.custom-card {
+    margin-bottom: 1rem;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.custom-card-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.custom-card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}

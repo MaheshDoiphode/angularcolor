@@ -1,0 +1,125 @@
+<div class="container py-4">
+
+     <!-- Settings Dropdown -->
+     <div class="dropdown settings-dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Settings
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="settingsDropdown">
+            <li><a class="dropdown-item" (click)="showPersonalInfo()">Personal Info</a></li>
+            <li><a class="dropdown-item" (click)="showWalletOptions()">Wallet</a></li>
+            <li><a class="dropdown-item" (click)="showBankDetails()">Bank Details</a></li>
+            <li><a class="dropdown-item" (click)="showComplaintsSuggestions()">Complaints & Suggestions</a></li>
+        </ul>
+    </div>
+    
+    <!-- User Balance and Rules -->
+    <div class="card custom-card">
+        <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+                Available balance: <span id="userBalance">{{ userBalance }}</span>
+                <button class="btn btn-primary btn-sm mx-2">Recharge</button>
+                <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#rulesModal">Read Rule</button>
+            </div>
+            <div class="countdown-timer" id="countdown">02:14</div>
+        </div>
+    </div>
+
+    <!-- Rules Modal -->
+    <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="rulesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="rulesModalLabel">Game Rules</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>Welcome</h4>
+                    <p>3 minutes 1 issue, 2 minutes and 30 seconds to order, 30 seconds to show the lottery result.
+                        It opens all day. The total number of trades is 480 issues.</p>
+                    <p>If you spend 100 to trade, after deducting a 2 service fee, your contract amount is 98:</p>
+                    <ul>
+                        <li>JOIN GREEN: if the result shows 1,3,7,9, you will get (98*2) 196.</li>
+                        <li>If the result shows 5, you will get (98*1.5) 147.</li>
+                        <li>JOIN RED: if the result shows 2,4,6,8, you will get (98*2) 196; If the result shows 0,
+                            you will get (98*1.5) 147.</li>
+                        <li>JOIN VIOLET: if the result shows 0 or 5, you will get (98*4.5) 441.</li>
+                        <li>SELECT NUMBER: if the result is the same as the number you selected, you will get (98*9)
+                            882.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Colors and Numbers -->
+    <div class="card custom-card">
+        <div class="card-header custom-card-header">
+            <h5 class="custom-card-title">Pick a Color or Number</h5>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-center mb-3">
+                <div class="number-box green"></div>
+                <div class="number-box red"></div>
+                <div class="number-box violet"></div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="number-box half-red-half-violet">0</div>
+                <div class="number-box green">1</div>
+                <div class="number-box red">2</div>
+                <div class="number-box green">3</div>
+                <div class="number-box red">4</div>
+                <div class="number-box half-green-half-violet">5</div>
+                <div class="number-box red">6</div>
+                <div class="number-box green">7</div>
+                <div class="number-box red">8</div>
+                <div class="number-box green">9</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Results -->
+    <div class="card custom-card">
+        <div class="card-header custom-card-header">
+            <h5 class="custom-card-title">Game Results</h5>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Price</th>
+                        <th>Number</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody id="gameResults">
+                    <tr *ngFor="let result of gameResults">
+                        <td>{{ result.period }}</td>
+                        <td>₹{{ result.price }}</td>
+                        <td>{{ result.number }}</td>
+                        <td class="{{ result.resultClass }}">{{ result.result }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- User Rounds -->
+    <div class="card custom-card">
+        <div class="card-header custom-card-header">
+            <h5 class="custom-card-title">Your Rounds</h5>
+        </div>
+        <div class="card-body">
+            <div class="list-group" id="userRounds">
+                <a *ngFor="let round of userRounds" href="#"
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    {{ round.id }}
+                    <span class="badge" [ngClass]="{'bg-success': round.win, 'bg-danger': !round.win}">
+                        {{ round.win ? 'Win: ₹' + round.amount : 'Lose' }}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
