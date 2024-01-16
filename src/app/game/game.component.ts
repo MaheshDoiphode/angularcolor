@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class GameComponent implements OnInit {
   private timeSubscription!: Subscription;
-  private apiUrl = 'https:demo-spring-8h3e.onrender.com/game';
+  private apiUrl = 'https://demo-spring-8h3e.onrender.com/game';
 
   userBalance = 1000;
   gameResults: GameResult[] = [];
