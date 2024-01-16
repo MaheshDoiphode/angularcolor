@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -6,15 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  username: string = '';
-  email: string = '';
-  password: string = '';
+  user = {
+    username: '',
+    email: '',
+    password: '',
+    dateOfBirth: '',
+    contactNumber: ''
+  };
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  onRegister(): void {
-    // For now, just log the input values
-    console.log('Registering:', this.username, this.email, this.password);
-    // Here you will eventually add the logic to call the API for registration
+  register(): void {
+    this.userService.register(this.user).subscribe(
+      response => {
+        console.log('Registration successful', response);
+      },
+      error => {
+        console.error('Registration failed', error);
+      }
+    );
   }
 }

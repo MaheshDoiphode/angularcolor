@@ -1,0 +1,76 @@
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+.login-container {
+    background-image: url('src\assets\lock.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 8em;
+  }
+  
+  .login-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .additional-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+  }
+  
+  .social-login .social-button {
+    background: #4267B2; /* Facebook Blue */
+    margin-top: 10px;
+  }
+  
+  .social-login .social-button:last-child {
+    background: #DB4437; /* Google Red */
+  }
+  
+  @media (max-width: 600px) {
+    .login-box {
+      width: 90%;
+    }
+  
+    .input-group input, button, .social-button {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  
+    .additional-options label, .additional-options a {
+      font-size: 12px; /* Smaller font size for checkbox and link */
+    }
+  }
+  

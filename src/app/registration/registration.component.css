@@ -1,0 +1,65 @@
+.register-container {
+    background-image: url('src/assets/lock.jpg'); /* Choose a suitable background */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+
+  }
+  
+  .register-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out, slideUp 0.5s ease-in-out;
+
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  }
+  .input-group input:focus {
+    border-color: #28a745; /* Highlight color when focused */
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.25); /* Subtle glow effect */
+  }
+  
+  .register-button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745; /* Bootstrap success color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+
+  }
+  .register-button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .register-button:hover {
+    background: #218838; /* Darker shade for hover */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+  }

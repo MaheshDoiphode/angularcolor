@@ -1,0 +1,64 @@
+.home-container {
+    background-image: url('src/assets/home.jpg'); /* A suitable background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Adjust color based on background */
+  }
+  .content-box:hover {
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+    transition: transform 0.3s ease-in-out;
+  }
+  .content-box {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    padding: 30px;
+    border-radius: 15px;
+    animation: fadeIn 1s ease-in-out;
+    padding: 40px; /* Increased padding */
+
+  }
+  .icon-container {
+    margin: 20px 0; /* Space above and below the icon/illustration */
+    text-align: center;
+  }
+  
+.center-icon {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto;
+    animation: bounce 1s infinite alternate; /* Bouncing animation */
+  }
+  h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem; /* Larger font size */
+    margin-bottom: 15px;
+  }
+  
+  .lead {
+    font-size: 1.2rem; /* Slightly larger than normal text */
+  }
+  
+  .button-group a {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px; /* Space between buttons and text */
+
+  }
+  
+  .button-group a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+  
+  
