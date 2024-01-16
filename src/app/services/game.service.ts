@@ -7,7 +7,7 @@ import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
   providedIn: 'root'
 })
 export class GameService {
-  private apiUrl = 'https:demo-spring-8h3e.onrender.com';
+  private apiUrl = 'https://demo-spring-8h3e.onrender.com';
   //private apiUrl = 'http://localhost:8080';
   private socketUrl = 'ws://https:demo-spring-8h3e.onrender.com/get';
   private socket$: WebSocketSubject<any> | null = null;
